@@ -1,16 +1,27 @@
-class Vehiculo:
-    color = "Rojo"
-    ruedas = "Grandes"
-    puertas = 5
+# inicializamos la clase
+class Vehiculo():
+    # inicializamos los atributos
+    def __init__(self, color, ruedas, puertas):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+
+    def __str__(self):
+        return "Color {}, {} ruedas".format( self.color, self.ruedas, self.puertas )
 
 class Coche(Vehiculo):
-    velocidad = "300 km/h"
-    cilindrada = "7.0"
 
-c = Coche()
+    def __init__(self, color, ruedas, puertas, velocidad, cilindrada):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
 
-print("Color del Coche: ", c.color)
-print("Ruedas del Coche: ", c.ruedas)
-print("Puertas del Coche: ", c.puertas)
-print("Velocidad del Coche: ", c.velocidad)
-print("Cilindraje del Coche: ", c.cilindrada)
+    def __str__(self):
+        return "color {}, {} km/h, {} ruedas, {} puertas, {} cc".format( self.color, self.velocidad, self.ruedas, self.puertas, self.cilindrada )
+
+# bloque principal
+# creamos el nuevo objeto, lo inicializamos y se imprime
+coche = Coche("azul", 4, 4, 150, 1200)
+print(coche)
